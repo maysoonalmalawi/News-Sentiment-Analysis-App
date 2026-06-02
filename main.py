@@ -10,8 +10,7 @@ import csv
 import io
 import re
 import nltk
-nltk.download("stopwords")
-nltk.download("vader_lexicon")
+from nltk.corpus import stopwords
 
 # ── Setup ──────────────────────────────────────────────────────
 
@@ -22,7 +21,17 @@ load_dotenv()
 api_key = os.getenv("NEWS_API_KEY")
 
 # Load stopwords once for better performance
-english_stopwords = set(stopwords.words("english"))
+
+# ensure data exists
+nltk.download("stopwords", quiet=True)
+nltk.download("vader_lexicon", quiet=True)
+
+# safe initialization
+try:
+    english_stopwords = set(stopwords.words("english"))
+except LookupError:
+    nltk.download("stopwords")
+    english_stopwords = set(stopwords.words("english"))
 
 # Helper function to clear old results
 def clear_results():
