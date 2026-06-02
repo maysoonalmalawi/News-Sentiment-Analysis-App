@@ -6,10 +6,12 @@ import matplotlib.pyplot as plt
 import streamlit as st
 import os
 from datetime import date, timedelta
-from nltk.corpus import stopwords
 import csv
 import io
 import re
+import nltk
+nltk.download("stopwords")
+nltk.download("vader_lexicon")
 
 # ── Setup ──────────────────────────────────────────────────────
 
