@@ -29,6 +29,9 @@ except LookupError:
     nltk.download("stopwords")
     english_stopwords = set(stopwords.words("english"))
 
+# Load VADER
+nltk.download("vader_lexicon", quiet=True)
+
 # Helper function to clear old results
 def clear_results():
     keys = [
