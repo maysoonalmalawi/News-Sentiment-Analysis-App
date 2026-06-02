@@ -1,5 +1,6 @@
 from dotenv import load_dotenv
 import requests
+from nltk.corpus import stopwords
 from nltk.sentiment import SentimentIntensityAnalyzer
 from collections import Counter
 import matplotlib.pyplot as plt
@@ -10,7 +11,6 @@ import csv
 import io
 import re
 import nltk
-from nltk.corpus import stopwords
 
 # ── Setup ──────────────────────────────────────────────────────
 
@@ -21,10 +21,6 @@ load_dotenv()
 api_key = os.getenv("NEWS_API_KEY")
 
 # Load stopwords once for better performance
-
-# ensure data exists
-nltk.download("stopwords", quiet=True)
-nltk.download("vader_lexicon", quiet=True)
 
 # safe initialization
 try:
