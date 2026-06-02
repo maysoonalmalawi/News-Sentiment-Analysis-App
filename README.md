@@ -1,4 +1,4 @@
-# 📰 News Sentiment Analyzer
+#  News Sentiment Analyzer
 
 A Streamlit web app that fetches real-time news headlines and analyzes their sentiment using VADER — giving you a quick read on how the media is covering any topic.
 
