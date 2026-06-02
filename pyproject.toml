@@ -1,0 +1,11 @@
+[project]
+name = "stocksentiment"
+version = "0.1.0"
+requires-python = ">=3.14"
+dependencies = [
+    "matplotlib>=3.10.9",
+    "nltk>=3.9.4",
+    "python-dotenv>=1.2.2",
+    "requests>=2.34.2",
+    "streamlit>=1.58.0",
+]
